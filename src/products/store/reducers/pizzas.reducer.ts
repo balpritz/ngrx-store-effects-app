@@ -26,7 +26,7 @@ export function reducer (
             return {
                 ...state,
                 loading: true,
-            }
+            };
         }
 
         case fromPizzas.LOAD_PIZZAS_FAIL: {
@@ -34,7 +34,7 @@ export function reducer (
                 ...state,
                 loaded: false,
                 loading: false,
-            }
+            };
         }
 
         case fromPizzas.LOAD_PIZZAS_SUCCESS: {
@@ -59,7 +59,7 @@ export function reducer (
                 loading: false,
                 entities,
             }
-        }
+        };
     }
 
     return state;
