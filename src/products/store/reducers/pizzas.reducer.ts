@@ -1,5 +1,6 @@
 import { Pizza } from 'src/products/models/pizza.model';
 import * as fromPizzas from '../actions/pizzas.action';
+import { ProductsState } from '.';
 
 // for static type checking
 export interface PizzaState {
@@ -10,7 +11,38 @@ export interface PizzaState {
 
 // initial state
 export const initialState: PizzaState = {
-    data: [],
+    data: [
+        {
+            "name": "Blazin' Inferno",
+            "toppings": [
+                {
+                    "id": 10,
+                    "name": "pepperoni"
+                },
+                {
+                    "id": 9,
+                    "name": "pepper"
+                },
+                {
+                    "id": 3,
+                    "name": "basil"
+                },
+                {
+                    "id": 4,
+                    "name": "chili"
+                },
+                {
+                    "id": 7,
+                    "name": "olive"
+                },
+                {
+                    "id": 2,
+                    "name": "bacon"
+                }
+            ],
+            "id": 1
+        }
+    ],
     loaded: false,
     loading: false,
 };
@@ -47,3 +79,8 @@ export function reducer (
 
     return state;
 }
+
+// small pieces of information of our state
+export const getPizzas = (state: PizzaState) => state.data;
+export const getPizzasLoading = (state: PizzaState) => state.loading;
+export const getPizzasLoaded = (state: PizzaState) => state.loaded;
